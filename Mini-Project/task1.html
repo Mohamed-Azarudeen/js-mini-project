@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>To do List</h1>
+    <form action="" id="myform">
+        <input type="text" id="todo">
+        <input type="button" id="add" onclick="addItem()" value="Add Item" />
+        <input type="button" id="remove" onclick="removeItem()" value="Remove Item" />
+    </form>
+    <ul id="list">
+        
+    </ul>
+    <script>
+        var list = document.querySelector('#list');
+
+        function addItem(){
+            let item = document.querySelector('#todo').value;
+            let text = document.createTextNode(item);
+            let listItem = document.createElement('li');
+            listItem.appendChild(text);
+            list.appendChild(listItem);
+        }
+        function removeItem(){
+            let rem = document.getElementById('todo');
+            let ul = document.getElementById('list');
+            let item = document.getElementById(rem.value);
+            ul.removeChild(item);
+        }
+    </script>
+</body>
+</html>
